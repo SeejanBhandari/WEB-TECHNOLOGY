@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>INDEX</title>
+	<link rel="stylesheet" type="text/css" href="PROJECT_A.css">
+</head>
+<body>
+	<video autoplay loop muted id="vdo">
+		<source src="bg.mp4" type="video/mp4">
+	</video>
+	<font size="1">.</font>
+	<div>
+	<center>
+	<form id="signup">	
+		<table id="tab">
+			<tr>
+				<th>
+					<center><table><th id="log">LOGIN</th></table></center>
+				</th>
+			</tr>
+			<tr><td>
+		<div id="lo">
+		<table>
+			<tr>
+				<td></td>
+				<td>
+					<label>User-name:</label><br>
+					<input type="text" id="UN" required>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+				<label>Password:</label><br>
+				<input type="password" id="P" required>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td style="font-color:#C0C0C0;">
+				<label>Role:</label><br>
+				<input type="radio" name="role" id="a" required>Teacher<br>
+				<input type="radio" name="role" id="b" required>Student
+				</td>
+			</tr>
+			<tr>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				<td>
+					<div>
+						<button type="submit" formaction="PAGE_1.html">SUBMIT</a></button>
+					</div>
+				</td>
+				<td>
+					<a href="My Html Form(final result).html">Don't have an ID?</a>
+				</td>
+			</tr>
+		</table>
+		</div>
+		</td>
+			</tr>
+		</table>
+	</form>	
+	</center>
+	</div>
+  	<script>
+    document.getElementById("signup").onsubmit = function(e) {
+      e.preventDefault();
+
+      const user = {
+        username: document.getElementById("UN").value,
+        password: document.getElementById("P").value,
+        teacher: document.getElementById("a").checked?document.getElementById("a").value:"",
+        student: document.getElementById("b").checked?document.getElementById("b").value:"",
+      };
+
+      
+      localStorage.setItem("user", JSON.stringify(user));
+      alert("LOGIN SUCCESSFUL!");
+      window.location.href = "Home page.html";
+    };
+  	</script>
+</body>
+</html>
