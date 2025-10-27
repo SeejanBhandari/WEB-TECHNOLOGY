@@ -1,0 +1,30 @@
+#tab{
+	border: 3px solid;
+	border-color: #624A96;
+	width: 500px;
+	height: 300px;
+	margin-top: 150px;
+	border-collapse: collapse;
+    background-image: url('img.png'); 
+    background-size: cover;    
+    background-position: center;
+}
+#lo{
+	border: 3px solid #141414;
+	vertical-align: middle;
+	font-color: #
+}
+th{
+	font-family: cursive;
+	font-size: 25px;
+}
+#vdo{
+	margin-top: 0px;
+	width: 100vw;
+	height: 100vh;
+	object-fit: cover;
+	position: fixed;
+	right: 0;
+	left: 0;
+	z-index: -1;
+}

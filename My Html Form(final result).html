@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>A Sample Form Using CSS 1</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-CompatibIe" content="IE=edge">
+	<style type="text/css">
+		th,td{ color: white; font-size:17px; font-family: monotype corsiva;
+		 text-align:left; }
+		#a,th{ color: #32CD32 }
+	</style>
+</head>
+<body background="SB.jpg">
+	<center>
+	<fieldset style="width: 600px; border: 10px ridge #32CD32;">
+			<form id="form">
+				<center>
+					<font face="monotype corsiva" color="cyan" size="8">Resistration Form</font>	
+				</center>
+				<center>
+				<table cellspacing="4" width="500px">
+					<tr>
+						<th></th>
+						<td>Date of submission:<input id="DOS" type="date" required></td>
+					</tr>
+					<tr></tr>
+					<tr>
+						<th> First Name:</th>
+						<th> Last Name:</th>
+					</tr>
+					<tr>
+						<td><input type="textbox" required placeholder="First Name" id="Firstname"></td>
+						<td><input type="textbox" required placeholder="Last Name" id="Lastname"></td>
+					</tr>
+					<tr>
+						<th>User name:</th>
+						<th>Password:</th>
+					</tr>
+					<tr>
+						<td><input type="textbox" required placeholder="User name" id="Username"></td>
+						<td><input type="password" required placeholder="Password" id="Password"></td>
+					</tr>
+					<tr>
+						<th>Contact number:</th>
+					</tr>
+					<tr>			
+						<td colspan="2"><select required id="Countrycode">
+							<option>🇳🇵+977</option>
+							<option>🇮🇳+91</option>
+							<option>🇧🇩+880</option>
+							<option>🇧🇹+975</option>
+							<option>🇺🇸+1</option>
+							<option>🇩🇪+49</option>
+							<option>🇷🇺+7</option></select>
+							<input type="tel" required placeholder="Contact number" style="width: 389px" id="Contact"></td>
+					</tr>
+					<tr>
+						<th>Email address:</th>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="email" required placeholder="Email address" style="width: 444px" id="Email"></td>
+					</tr>
+					<tr>
+						<td colspan="2"><b id="a">Gender:</b>
+								<input required type="radio" id="Male" name="x">Male
+						        <input required type="radio" id="Female" name="x">Female
+						        <input type="radio" id="Other" name="x">Other          
+						    </td>
+					</tr>
+					<tr>
+						<th>Date of Birth:</th>
+					</tr>	
+					<tr>
+						<td colspan="2">Month:
+							<select required id="Month">
+								<option>Januaray</option>
+								<option>February</option>
+								<option>March</option>
+								<option>April</option>
+								<option>May</option>
+								<option>June</option>
+								<option>July</option>
+								<option>August</option>
+								<option>September</option>
+								<option>October</option>
+								<option>November</option>
+								<option>December</option>
+							</select >
+							<select required id="Day">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								<option>6</option>
+								<option>7</option>
+								<option>8</option>
+								<option>9</option>
+								<option>10</option>
+								<option>11</option>
+								<option>12</option>
+								<option>13</option>
+								<option>14</option>
+								<option>15</option>
+								<option>16</option>
+								<option>17</option>
+								<option>18</option>
+								<option>19</option>
+								<option>20</option>
+								<option>21</option>
+								<option>22</option>
+								<option>23</option>
+								<option>24</option>
+								<option>25</option>
+								<option>26</option>
+								<option>27</option>
+								<option>28</option>
+								<option>29</option>
+								<option>30</option>
+								<option>31</option>
+								<option>32</option>
+							</select>
+							Year:<input type="text" required placeholder="Year" id="Year">
+						</td>
+					</tr>
+					<tr>
+						<th>Hobbies</th>
+					</tr>
+					<tr><td>
+						<input type="checkbox" id="Singing">Singing
+						<input type="checkbox" id="Dancing">Dancing
+						<input type="checkbox" id="Reading">Reading<br>
+						<input type="checkbox" id="Writing">Writing
+						<input type="checkbox" id="Music">Music<br>
+						<input type="checkbox" id="Traveling" >Traveling 
+						<input type="checkbox" id="Cycling">Cycling<br>
+						<input type="checkbox" id="Sports">Sports 
+						<input type="checkbox" id="Others">Others<br>
+					    </td>
+				    </tr>
+				    <tr>
+				    	<td><button type="submit">SIGN IN</button></td>
+				    	<td><input type="reset" value="Reset" id="z" style="background-color:#0000FF; color: #FFFFFF"></td>
+				    </tr>
+				</table>
+			</center>
+			</form>
+    </fieldset>
+    </center>
+    <script type="text/javascript"> 
+    	document.getElementById("form").onsubmit = function(e) { e.preventDefault();
+
+        const formData = {
+                date: document.getElementById("DOS").value,
+                firstName: document.getElementById("Firstname").value,
+                lastName: document.getElementById("Lastname").value,
+                userName: document.getElementById("Username").value,
+                password: document.getElementById("Password").value,
+                contactNumber: document.getElementById("Countrycode").value + document.getElementById("Contact").value,
+                email: document.getElementById("Email").value,
+                male: document.getElementById("Male").checked?document.getElementById("Male").value:"",
+                female: document.getElementById("Female").checked?document.getElementById("Female").value:"",
+                other: document.getElementById("Other").checked?document.getElementById("Other").value:"",
+                birthMonth: document.getElementById("Month").value,
+                birthDay: document.getElementById("Day").value,
+                birthYear: document.getElementById("Year").value,
+                hobbies: {
+                    singing: document.getElementById("Singing").checked,
+                    dancing: document.getElementById("Dancing").checked,
+                    reading: document.getElementById("Reading").checked,
+                    writing: document.getElementById("Writing").checked,
+                    music: document.getElementById("Music").checked,
+                    traveling: document.getElementById("Traveling").checked,
+                    cycling: document.getElementById("Cycling").checked,
+                    sports: document.getElementById("Sports").checked,
+                    others: document.getElementById("Others").checked
+                }
+      }
+            localStorage.setItem("formData", JSON.stringify(formData));
+      
+      alert("Signup successful! Please login now.");
+      window.location.href = "PROJECT 39.html";
+    };
+</script>
+</body>
+</html>
